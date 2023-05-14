@@ -4,6 +4,7 @@ use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\HomeController;
 use App\Http\Controllers\Dashboard\MenuController;
 use App\Http\Controllers\Dashboard\UserController;
+use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,15 +18,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('website.index');
-})->name('home');
+Route::get('/',[WebsiteController::class,'index'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('menu',[HomeController::class,'index'])->name('menu');
+Route::get('menu',[WebsiteController::class,'menu'])->name('menu');
 Route::group(['middleware' => 'auth','prefix'=>'admin'],function(){
 
     Route::group(['prefix' => 'users'], function (){
