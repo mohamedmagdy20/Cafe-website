@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Emp Mangment</title>
+    <title>Cafe</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/flag-icon-css/css/flag-icon.min.css')}}">
@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/css/toastr.css" rel="stylesheet" />
+
     @yield('css')
   </head>
   <body>
@@ -259,7 +261,6 @@
                 <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard templates</a> from Bootstrapdash.com</span>
               </div>
             </div>
-            <input type="text" value="4" id="x">
           </footer>
           <!-- partial -->
         </div>
@@ -296,6 +297,39 @@
     <!-- Custom js for this page -->
     <script src="{{asset('assets/js/dashboard.js') }}"></script>
     <!-- End custom js for this page -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/js/toastr.js"></script>
+    <script>
+      $(document).ready(function() {
+          toastr.options.timeOut = 10000;
+          @if (Session::has('error'))
+              toastr.error('{{ Session::get('error') }}');
+          @elseif(Session::has('success'))
+              toastr.success('{{ Session::get('success') }}');
+          @endif
+      });
+
+  </script>
+
+<script>
+  const chooseFile = document.getElementById("choose-file");
+  const imgPreview = document.getElementById("img-preview");
+  chooseFile.addEventListener("change", function () {
+    getImgData();
+  });
+
+  function getImgData() {
+    const files = chooseFile.files[0];
+    if (files) {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(files);
+      fileReader.addEventListener("load", function () {
+        imgPreview.style.display = "block";
+        imgPreview.innerHTML = '<img src="' + this.result + '" />';
+      });    
+    }
+  }
+</script>
 
     @yield('js')
   </body>

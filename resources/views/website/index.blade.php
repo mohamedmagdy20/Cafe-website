@@ -10,11 +10,11 @@
   <meta
     content="Carefully crafted Webflow theme for cafe and restaurants. This simple yet powerful CMS template comes a variety of menu pages, blog functionality, booking and contact forms and many other useful components."
     name="description" />
-  <meta content="Café - Webflow HTML website template" property="og:title" />
+  <meta content="Café" property="og:title" />
   <meta
     content="Carefully crafted Webflow theme for cafe and restaurants. This simple yet powerful CMS template comes a variety of menu pages, blog functionality, booking and contact forms and many other useful components."
     property="og:description" />
-  <meta content="Café - Webflow HTML website template" property="twitter:title" />
+  <meta content="Café" property="twitter:title" />
   <meta
     content="Carefully crafted Webflow theme for cafe and restaurants. This simple yet powerful CMS template comes a variety of menu pages, blog functionality, booking and contact forms and many other useful components."
     property="twitter:description" />
@@ -22,20 +22,20 @@
   <meta content="summary_large_image" name="twitter:card" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <meta content="Webflow" name="generator" />
-  <link href="../assets.website-files.com/59e98418f9cd070001c89d5a/css/cafe-template.webflow.810e3cf84.css"
-    rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{asset('website/59e98418f9cd070001c89d5a/css/cafe-template.webflow.810e3cf84.css')}}">
   <link href="https://fonts.googleapis.com/" rel="preconnect" />
   <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin="anonymous" />
   <script src="../ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  {{-- <script src="{{asset('webfont')}}"></script> --}}
   <script
     type="text/javascript">WebFont.load({ google: { families: ["Oswald:200,300,400,500,600,700", "Great Vibes:400", "Karla:regular,700"] } });</script>
   <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
   <script
     type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
-  <link href="../assets.website-files.com/59e98418f9cd070001c89d5a/59f9d1e301b9500001e859a6_favicon.png"
+  <link href="{{asset('favicon.ico')}}"
     rel="shortcut icon" type="image/x-icon" />
-  <link href="../assets.website-files.com/59e98418f9cd070001c89d5a/59f9d1ea3b3286000183b8f1_webclip.png"
-    rel="apple-touch-icon" />
+  
+    <link rel="stylesheet" href="{{asset('website/59e98418f9cd070001c89d5a/59f9d1ea3b3286000183b8f1_webclip.png')}}">
 </head>
 
 <body class="body">
@@ -50,22 +50,12 @@
           class="logo fixed-nav-bar-logo w-nav-brand w--current">
           <div><span class="yellow-text">Delicious</span> CAFÉ</div>
         </a>
-        <nav role="navigation" class="nav-menu fixed-nav-menu w-nav-menu"><a href="index.html" aria-current="page"
-            class="nav-link fixed-nav-link w-nav-link w--current">Home</a>
-          <div data-delay="0" data-hover="true" class="w-dropdown">
-            <div class="nav-link fixed-nav-link w-dropdown-toggle">
-              <div class="dropdown-icon w-icon-dropdown-toggle"></div>
-              <div>Menu</div>
-            </div>
-            <nav class="dropdown fixed-dropdown w-dropdown-list"><a href="menu-grid.html"
-                class="dropdown-link w-dropdown-link">Menu Grid</a><a href="menu-small-grid.html"
-                class="dropdown-link w-dropdown-link">Menu Small Grid</a><a href="menu-list"
-                class="dropdown-link w-dropdown-link">Menu List</a><a href="menu-classic"
-                class="dropdown-link w-dropdown-link">Menu Classic</a></nav>
-          </div><a href="blog" class="nav-link fixed-nav-link w-nav-link">Blog</a><a href="about.html"
-            class="nav-link fixed-nav-link w-nav-link">About</a><a href="contact.html"
-            class="nav-link fixed-nav-link w-nav-link">Contact</a><a href="reservation.html"
-            class="button small-button nav-bar-button w-button">Reservation</a>
+        <nav role="navigation" class="nav-menu fixed-nav-menu w-nav-menu">
+          <a href="{{route('home')}}" aria-current="page" class="nav-link fixed-nav-link w-nav-link w--current">Home</a>
+          <a href="blog" class="nav-link fixed-nav-link w-nav-link">Menu</a>
+          {{-- <a href="about.html" class="nav-link fixed-nav-link w-nav-link">About</a>
+          <a href="contact.html" class="nav-link fixed-nav-link w-nav-link">Contact</a>
+          <a href="reservation.html" class="button small-button nav-bar-button w-button">Reservation</a> --}}
         </nav>
         <div class="menu-button fixed-menu-button w-nav-button">
           <div class="w-icon-nav-menu"></div>
@@ -78,21 +68,20 @@
         <div class="wrapper w-container"><a href="index.html" aria-current="page" class="logo w-nav-brand w--current">
             <div><span class="yellow-text">Delicious</span> CAFÉ</div>
           </a>
-          <nav role="navigation" class="nav-menu w-nav-menu"><a href="index.html" aria-current="page"
+          <nav role="navigation" class="nav-menu w-nav-menu"><a href="{{route('home')}}" aria-current="page"
               class="nav-link w-nav-link w--current">Home</a>
-            <div data-delay="0" data-hover="true" class="w-dropdown">
+            {{-- <div data-delay="0" data-hover="true" class="w-dropdown">
               <div class="nav-link w-dropdown-toggle">
                 <div class="dropdown-icon w-icon-dropdown-toggle"></div>
                 <div>Menu</div>
-              </div>
-              <nav class="dropdown w-dropdown-list"><a href="menu-grid.html" class="dropdown-link w-dropdown-link">Menu
+              </div> --}}
+              {{-- <nav class="dropdown w-dropdown-list"><a href="menu-grid.html" class="dropdown-link w-dropdown-link">Menu
                   Grid</a><a href="menu-small-grid.html" class="dropdown-link w-dropdown-link">Menu Small Grid</a><a
                   href="menu-list" class="dropdown-link w-dropdown-link">Menu List</a><a href="menu-classic"
-                  class="dropdown-link w-dropdown-link">Menu Classic</a></nav>
-            </div><a href="blog" class="nav-link w-nav-link">Blog</a><a href="about.html"
-              class="nav-link w-nav-link">About</a><a href="contact.html" class="nav-link w-nav-link">Contact</a><a
-              href="reservation.html" class="button small-button nav-bar-button w-button">Reservation</a>
-          </nav>
+                  class="dropdown-link w-dropdown-link">Menu Classic</a></nav> --}}
+            {{-- </div> --}}
+            <a href="{{route('menu')}}" class="nav-link w-nav-link">Menu</a>
+            </nav>
           <div class="menu-button w-nav-button">
             <div class="w-icon-nav-menu"></div>
           </div>
@@ -127,8 +116,8 @@
                 <h1>Delicious Café</h1>
                 <div data-ix="fade-up-2" class="divider center"></div>
                 <p data-ix="fade-up-3" class="paragraph-big hero-text">Fish is one of the most wholesome foods that man
-                  can eat. In fact, people have been eating fish throughout human history.</p><a href="reservation.html"
-                  data-ix="fade-up-4" class="button hero-button w-button">Book a Table</a><a href="menu-small-grid.html"
+                  can eat. In fact, people have been eating fish throughout human history.</p>
+                  <a href="{{route('menu')}}"
                   data-ix="fade-up-4" class="button ghost-bg-button w-button">View Menus</a>
               </div>
             </div>
@@ -152,8 +141,8 @@
                 <h1 data-ix="fade-up-2">Special Events</h1>
                 <div data-ix="fade-up-2" class="divider center"></div>
                 <p data-ix="fade-up-3" class="paragraph-big hero-text">Fish is one of the most wholesome foods that man
-                  can eat. In fact, people have been eating fish throughout human history.</p><a href="blog"
-                  data-ix="fade-up-4" class="button w-button">Learn More</a>
+                  can eat. In fact, people have been eating fish throughout human history.</p><a href="{{route('menu')}}"
+                  data-ix="fade-up-4" class="button w-button">View Menu</a>
               </div>
             </div>
           </div>
@@ -201,7 +190,7 @@
             class="menu margin w-dyn-items">
             <div role="listitem" class="menu-grid-item w-dyn-item">
               <div class="menu-grid-card"><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d70/59f91a0b78cc2d0001fd9067_alexandra-gorn-336249.jpg"
+                  src="{{asset('website/59e98418f9cd070001c89d70/59f91a0b78cc2d0001fd9067_alexandra-gorn-336249.jpg')}}"
                   alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 47vw, (max-width: 991px) 31vw, 27vw"
                   srcset="https://assets.website-files.com/59e98418f9cd070001c89d70/59f91a0b78cc2d0001fd9067_alexandra-gorn-336249-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d70/59f91a0b78cc2d0001fd9067_alexandra-gorn-336249.jpg 740w"
                   class="menu-grid-image" /><a href="menu-categories/drinks" class="badge menu-item-category">Drinks</a>
@@ -247,7 +236,7 @@
             </div>
             <div role="listitem" class="menu-grid-item w-dyn-item">
               <div class="menu-grid-card"><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d70/59f917053b32860001831e83_mike-tinnion-365019.jpg"
+                  src="{{asset('website/59e98418f9cd070001c89d70/59f917053b32860001831e83_mike-tinnion-365019.jpg')}}"
                   alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 47vw, (max-width: 991px) 31vw, 27vw"
                   srcset="https://assets.website-files.com/59e98418f9cd070001c89d70/59f917053b32860001831e83_mike-tinnion-365019-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d70/59f917053b32860001831e83_mike-tinnion-365019.jpg 740w"
                   class="menu-grid-image" /><a href="menu-categories/lunch" class="badge menu-item-category">Lunch</a>
@@ -293,7 +282,7 @@
             </div>
             <div role="listitem" class="menu-grid-item w-dyn-item">
               <div class="menu-grid-card"><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d70/59f90ee9c9a5280001e49497_mariana-medvedeva-379625.jpg"
+                  src="{{asset('website/59e98418f9cd070001c89d70/59f90ee9c9a5280001e49497_mariana-medvedeva-379625.jpg')}}"
                   alt="" class="menu-grid-image" /><a href="menu-categories/breakfast"
                   class="badge menu-item-category">Breakfast</a>
                 <div class="menu-info w-clearfix">
@@ -338,14 +327,14 @@
             </div>
           </div>
         </div>
-      </div><a href="menu-grid.html" data-w-id="52acb8a8-53b0-f52f-df4d-3bf897a51de8" style="opacity:1"
+      </div><a href="{{route('menu')}}" data-w-id="52acb8a8-53b0-f52f-df4d-3bf897a51de8" style="opacity:1"
         class="button w-button">View Full Menu</a>
     
     
     
       </div><a href="reservation.html" class="bg-section huge-button w-inline-block"><img
-        src="../assets.website-files.com/59e98418f9cd070001c89d5a/5a59998b6b273e0001a21e91_order-icon-white.png"
-        width="64" style="opacity:1" data-w-id="e2025dc7-01b5-7c1a-59b8-5a9de0a8c330" alt="" />
+        src="{{asset('website/59e98418f9cd070001c89d5a/5a59998b6b273e0001a21e91_order-icon-white.pn')}}"
+       width="64" style="opacity:1" data-w-id="e2025dc7-01b5-7c1a-59b8-5a9de0a8c330" alt="" />
       <h2 data-w-id="861b18a2-ab3a-43ab-aee3-e79082dca8c7" style="opacity:1">Reserve a Table</h2>
     </a>
     <div class="section pattern-section no-bottom-padding wf-section">
@@ -354,8 +343,7 @@
           <div data-w-id="7c73ff80-8df2-7305-3d73-92b2f24be052" style="opacity:1" class="side-card-image _1"></div>
           <div data-ix="fade-left" data-w-id="ff252e3a-eb22-b78e-16eb-59bce7170bde" style="opacity:1" class="side-card">
             <div class="side-card-content"><img
-                src="../assets.website-files.com/59e98418f9cd070001c89d5a/59f5b840fccfea0001f7083e_interior-icon.png"
-                alt="" class="big-icon" />
+                src="{{asset('website/59e98418f9cd070001c89d5a/59f5b840fccfea0001f7083e_interior-icon.png')}}            alt="" class="big-icon" />
               <h3 class="side-card-header">Beautiful Interior</h3>
               <div class="divider"></div>
               <p class="grey-text">Fish is one of the most wholesome foods that man can eat. In fact, people have been
@@ -372,8 +360,7 @@
           <div data-ix="fade-right" data-w-id="0e0ee31f-de97-ce02-c2d0-31edad2e26a5" style="opacity:1"
             class="side-card reversed">
             <div class="side-card-content"><img
-                src="../assets.website-files.com/59e98418f9cd070001c89d5a/59f5b8409f4c3500019cc8e6_apple-icon.png"
-                alt="" class="big-icon" />
+                src="{{asset('website/59e98418f9cd070001c89d5a/59f5b8409f4c3500019cc8e6_apple-icon.png')}}         alt="" class="big-icon" />
               <h3 class="side-card-header">Only Fresh Food</h3>
               <div class="divider"></div>
               <p class="grey-text">Fish is one of the most wholesome foods that man can eat. In fact, people have been
@@ -397,7 +384,7 @@
             class="menu-list margin w-dyn-items">
             <div role="listitem" class="menu-list-item w-dyn-item">
               <div class="menu-list-card"><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d70/59f8fd1301b9500001e7cc10_eszter-biro-253762.jpg"
+                  src="{{asset('website/59e98418f9cd070001c89d70/59f8fd1301b9500001e7cc10_eszter-biro-253762.jpg')}}"
                   alt="" sizes="80px"
                   srcset="https://assets.website-files.com/59e98418f9cd070001c89d70/59f8fd1301b9500001e7cc10_eszter-biro-253762-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d70/59f8fd1301b9500001e7cc10_eszter-biro-253762.jpg 740w"
                   class="menu-list-image" />
@@ -429,8 +416,7 @@
             </div>
             <div role="listitem" class="menu-list-item w-dyn-item">
               <div class="menu-list-card"><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d70/59f8fab2c9a5280001e482a0_alex-loup-397220.jpg"
-                  alt="" sizes="80px"
+                  src="{{asset('website/59e98418f9cd070001c89d70/59f8fab2c9a5280001e482a0_alex-loup-397220.jpg')}}                 alt="" sizes="80px"
                   srcset="https://assets.website-files.com/59e98418f9cd070001c89d70/59f8fab2c9a5280001e482a0_alex-loup-397220-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d70/59f8fab2c9a5280001e482a0_alex-loup-397220.jpg 740w"
                   class="menu-list-image" />
                 <div class="menu-info w-clearfix">
@@ -461,7 +447,7 @@
             </div>
             <div role="listitem" class="menu-list-item w-dyn-item">
               <div class="menu-list-card"><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d70/59f87b46930b860001a6f6bb_brooke-lark-200721.jpg"
+                  src="{{asset('website/59e98418f9cd070001c89d70/59f87b46930b860001a6f6bb_brooke-lark-200721.jpg')}}"
                   alt="" sizes="80px"
                   srcset="https://assets.website-files.com/59e98418f9cd070001c89d70/59f87b46930b860001a6f6bb_brooke-lark-200721-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d70/59f87b46930b860001a6f6bb_brooke-lark-200721.jpg 740w"
                   class="menu-list-image" />
@@ -493,7 +479,7 @@
             </div>
             <div role="listitem" class="menu-list-item w-dyn-item">
               <div class="menu-list-card"><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d70/59f917053b32860001831e83_mike-tinnion-365019.jpg"
+                  src="{{asset('website/59e98418f9cd070001c89d70/59f917053b32860001831e83_mike-tinnion-365019.jpg')}}"
                   alt="" sizes="80px"
                   srcset="https://assets.website-files.com/59e98418f9cd070001c89d70/59f917053b32860001831e83_mike-tinnion-365019-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d70/59f917053b32860001831e83_mike-tinnion-365019.jpg 740w"
                   class="menu-list-image" />
@@ -525,7 +511,7 @@
             </div>
             <div role="listitem" class="menu-list-item w-dyn-item">
               <div class="menu-list-card"><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d70/59f87aa43b3286000182749a_brenda-godinez-228181.jpg"
+                  src="{{asset('website/59e98418f9cd070001c89d70/59f87aa43b3286000182749a_brenda-godinez-228181.jpg')}}"
                   alt="" sizes="80px"
                   srcset="https://assets.website-files.com/59e98418f9cd070001c89d70/59f87aa43b3286000182749a_brenda-godinez-228181-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d70/59f87aa43b3286000182749a_brenda-godinez-228181.jpg 740w"
                   class="menu-list-image" />
@@ -557,8 +543,7 @@
             </div>
             <div role="listitem" class="menu-list-item w-dyn-item">
               <div class="menu-list-card"><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d70/59f8f88801b9500001e7c810_yoori-koo-51884.jpg"
-                  alt="" sizes="80px"
+                  src="{{asset('website/59e98418f9cd070001c89d70/59f8f88801b9500001e7c810_yoori-koo-51884.jpg')}}"                alt="" sizes="80px"
                   srcset="https://assets.website-files.com/59e98418f9cd070001c89d70/59f8f88801b9500001e7c810_yoori-koo-51884-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d70/59f8f88801b9500001e7c810_yoori-koo-51884.jpg 740w"
                   class="menu-list-image" />
                 <div class="menu-info w-clearfix">
@@ -589,7 +574,7 @@
             </div>
             <div role="listitem" class="menu-list-item w-dyn-item">
               <div class="menu-list-card"><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d70/59f879a078cc2d0001fcf2b0_brenda-godinez-298223.jpg"
+                  src="{{asset('website/59e98418f9cd070001c89d70/59f879a078cc2d0001fcf2b0_brenda-godinez-298223.jpg')}}"
                   alt="" sizes="80px"
                   srcset="https://assets.website-files.com/59e98418f9cd070001c89d70/59f879a078cc2d0001fcf2b0_brenda-godinez-298223-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d70/59f879a078cc2d0001fcf2b0_brenda-godinez-298223.jpg 740w"
                   class="menu-list-image" />
@@ -621,7 +606,7 @@
             </div>
             <div role="listitem" class="menu-list-item w-dyn-item">
               <div class="menu-list-card"><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d70/59f8797478cc2d0001fcf202_jonathan-pielmayer-61902.jpg"
+                  src="{{asset('website/59e98418f9cd070001c89d70/59f8797478cc2d0001fcf202_jonathan-pielmayer-61902.jpg')}}"
                   alt="" sizes="80px"
                   srcset="https://assets.website-files.com/59e98418f9cd070001c89d70/59f8797478cc2d0001fcf202_jonathan-pielmayer-61902-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d70/59f8797478cc2d0001fcf202_jonathan-pielmayer-61902.jpg 740w"
                   class="menu-list-image" />
@@ -653,86 +638,16 @@
             </div>
           </div>
         </div>
-      </div><a href="menu-list" data-w-id="92ac7f1d-a063-55da-233e-bd75444ad3a8" style="opacity:1"
+      </div><a href="{{route('menu')}}" data-w-id="92ac7f1d-a063-55da-233e-bd75444ad3a8" style="opacity:1"
         class="button w-button">View Full Menu</a>
     </div>
-    <div class="section pattern-section wf-section">
-      <div class="wrapper w-container">
-        <div class="features">
-          <div data-ix="fade-right" data-w-id="d3f7b76d-de99-83fa-e711-451e0fb027eb" style="opacity:1"
-            class="feature-image _1">
-            <h3 class="feature-image-header">Delicious Food</h3>
-            <p>Fish is one of the most wholesome foods that man can eat. In fact, people have been eating fish
-              throughout human history.</p><a href="menu-classic"
-              class="button small-button white-hover-button w-button">View Menus</a>
-          </div>
-          <div data-ix="fade-left" data-w-id="484c7fd5-06aa-3beb-174a-e8253800cf4a" style="opacity:1"
-            class="feature-image _2">
-            <h3 class="feature-image-header">Special Events</h3>
-            <p>Fish is one of the most wholesome foods that man can eat. In fact, people have been eating fish
-              throughout human history.</p><a href="blog" class="button small-button white-hover-button w-button">Go to
-              Blog</a>
-          </div>
-          <div data-ix="fade-right" data-w-id="15b28208-2395-69ff-78df-3ca0c68613ea" style="opacity:1"
-            class="feature-text">
-            <h4>Welcoming Atmosphere</h4>
-            <p class="grey-text">Fish is one of the most wholesome foods that man can eat. In fact, people have been
-              eating fish throughout human history. These days, many cooks yearn to add fish to their repertoire.</p>
-          </div>
-          <div data-ix="fade-left" data-w-id="613d30eb-a825-244c-313d-5e075b72c016" style="opacity:1"
-            class="feature-banner">
-            <div class="feature-banner-content">
-              <div class="badge banner-badge">15-18PM</div>
-              <h2 class="banner-header">Happy Hour</h2>
-              <h5>Guy 1 drink, get 1 FREE</h5>
-            </div>
-            <div class="frame white-frame"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bg-section cta-section wf-section">
-      <div class="wrapper w-container">
-        <div data-ix="fade-up-1" class="cta-content">
-          <div data-w-id="b5f00a36-3182-a0fd-0e71-41b44fa5dd84" style="opacity:1" class="sub-header">Reservation</div>
-          <h2 data-w-id="eba5040d-99c7-949a-df28-db7a443c7ab7" style="opacity:1">Book Your Table</h2>
-          <div data-w-id="79b1062a-5296-4c26-cc52-24fff1d3323c" style="opacity:1" class="divider"></div>
-          <p data-w-id="17c64134-ac89-3e0a-3456-5ada5eb3115c" style="opacity:1" class="section-description">Fish is one
-            of the most wholesome foods that man can eat. In fact, people have been eating fish throughout human
-            history.</p><a href="reservation.html" data-w-id="384f5d75-d23f-955f-4e4f-623e80e9ca76" style="opacity:1"
-            class="button w-button">Book a Table</a>
-        </div>
-      </div>
-    </div>
-    <div class="section pattern-section wf-section">
-      <div class="wrapper w-container">
-        <div class="side-image-wrapper"><img
-            src="../assets.website-files.com/59e98418f9cd070001c89d5a/59f5bb496a27c40001326b7c_chief-photo.jpg"
-            style="opacity:1" data-w-id="44e43b9c-af11-999f-1c86-1feb29c04bc2"
-            sizes="(max-width: 479px) 81vw, (max-width: 767px) 82vw, (max-width: 991px) 48vw, 35vw"
-            srcset="https://assets.website-files.com/59e98418f9cd070001c89d5a/59f5bb496a27c40001326b7c_chief-photo-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d5a/59f5bb496a27c40001326b7c_chief-photo-p-800.jpeg 800w, https://assets.website-files.com/59e98418f9cd070001c89d5a/59f5bb496a27c40001326b7c_chief-photo.jpg 940w"
-            alt="" class="side-image" />
-          <div data-ix="fade-left" class="side-image-content">
-            <div data-w-id="8027923c-8a54-3894-5d6c-06fe26b4522f" style="opacity:1" class="sub-header">Chief’s Word
-            </div>
-            <h2 data-w-id="507cf9d6-269f-3020-8d18-b36d70e138c8" style="opacity:1">Made with Love</h2>
-            <div data-w-id="f55b6c00-a63b-fc09-68b4-0d2698d5ec45" style="opacity:1" class="divider"></div>
-            <p data-w-id="8a665940-fd5f-4da3-76b5-2ff45789fa6c" style="opacity:1" class="grey-text">Fish is one of the
-              most wholesome foods that man can eat. In fact, people have been eating fish throughout human history.
-              These days, many cooks yearn to add fish to their repertoire, but the whole process of cleaning and
-              filleting</p><img
-              src="../assets.website-files.com/59e98418f9cd070001c89d5a/59f5bf919f4c3500019ccd0f_signature.png"
-              width="184" style="opacity:1" data-w-id="71de25f9-bb72-e1f2-f356-f483cf53a975" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
+   
+
     <div data-w-id="975851d4-1cae-e7e9-55a2-caa9b6cbd63e" style="opacity:1"
       class="bg-section gallery-section wf-section">
       <div class="gallery"><a href="#" class="gallery-image w-inline-block w-lightbox">
           <div class="zoom-icon"></div><img
-            src="../assets.website-files.com/59e98418f9cd070001c89d5a/59f71c79ebcb7400011f94c5_gallery-image-01.jpg"
-            sizes="(max-width: 767px) 49vw, 19vw"
+            src="{{asset('website/59e98418f9cd070001c89d5a/59f71c79ebcb7400011f94c5_gallery-image-01.jpg')}}           sizes="(max-width: 767px) 49vw, 19vw"
             srcset="https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c79ebcb7400011f94c5_gallery-image-01-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c79ebcb7400011f94c5_gallery-image-01.jpg 800w"
             alt="" />
           <script type="application/json" class="w-json">{
@@ -753,8 +668,7 @@
 }</script>
         </a><a href="#" class="gallery-image w-inline-block w-lightbox">
           <div class="zoom-icon"></div><img
-            src="../assets.website-files.com/59e98418f9cd070001c89d5a/59f71c8104139300016ad2b5_gallery-image-02.jpg"
-            sizes="(max-width: 767px) 49vw, 19vw"
+            src="{{asset('website/59e98418f9cd070001c89d5a/59f71c8104139300016ad2b5_gallery-image-02.jpg')}}"           sizes="(max-width: 767px) 49vw, 19vw"
             srcset="https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c8104139300016ad2b5_gallery-image-02-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c8104139300016ad2b5_gallery-image-02.jpg 800w"
             alt="" />
           <script type="application/json" class="w-json">{
@@ -774,8 +688,7 @@
 }</script>
         </a><a href="#" data-ix="show-zoom-icon" class="gallery-image w-inline-block w-lightbox">
           <div class="zoom-icon"></div><img
-            src="../assets.website-files.com/59e98418f9cd070001c89d5a/59f71c8504139300016ad2b7_gallery-image-03.jpg"
-            sizes="(max-width: 767px) 49vw, 19vw"
+            src="{{asset('website/59e98418f9cd070001c89d5a/59f71c8504139300016ad2b7_gallery-image-03.jpg')}}           sizes="(max-width: 767px) 49vw, 19vw"
             srcset="https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c8504139300016ad2b7_gallery-image-03-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c8504139300016ad2b7_gallery-image-03.jpg 800w"
             alt="" />
           <script type="application/json" class="w-json">{
@@ -796,8 +709,7 @@
 }</script>
         </a><a href="#" data-ix="show-zoom-icon" class="gallery-image w-inline-block w-lightbox">
           <div class="zoom-icon"></div><img
-            src="../assets.website-files.com/59e98418f9cd070001c89d5a/59f71c87eac5ea0001c1bf57_gallery-image-04.jpg"
-            sizes="(max-width: 767px) 49vw, 19vw"
+            src="{{asset('website/59e98418f9cd070001c89d5a/59f71c87eac5ea0001c1bf57_gallery-image-04.jpg')}}           sizes="(max-width: 767px) 49vw, 19vw"
             srcset="https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c87eac5ea0001c1bf57_gallery-image-04-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c87eac5ea0001c1bf57_gallery-image-04.jpg 800w"
             alt="" />
           <script type="application/json" class="w-json">{
@@ -817,8 +729,7 @@
 }</script>
         </a><a href="#" data-ix="show-zoom-icon" class="gallery-image w-inline-block w-lightbox">
           <div class="zoom-icon"></div><img
-            src="../assets.website-files.com/59e98418f9cd070001c89d5a/59f71c88ebcb7400011f94cd_gallery-image-05.jpg"
-            sizes="(max-width: 767px) 49vw, 19vw"
+            src="{{asset('website/59e98418f9cd070001c89d5a/59f71c88ebcb7400011f94cd_gallery-image-05.jpg')}}           sizes="(max-width: 767px) 49vw, 19vw"
             srcset="https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c88ebcb7400011f94cd_gallery-image-05-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c88ebcb7400011f94cd_gallery-image-05.jpg 800w"
             alt="" />
           <script type="application/json" class="w-json">{
@@ -839,8 +750,7 @@
 }</script>
         </a><a href="#" data-ix="show-zoom-icon" class="gallery-image w-inline-block w-lightbox">
           <div class="zoom-icon"></div><img
-            src="../assets.website-files.com/59e98418f9cd070001c89d5a/59f71c89696c200001fc9240_gallery-image-06.jpg"
-            sizes="(max-width: 767px) 49vw, 19vw"
+            src="{{asset('website/59e98418f9cd070001c89d5a/59f71c89696c200001fc9240_gallery-image-06.jpg')}}"           sizes="(max-width: 767px) 49vw, 19vw"
             srcset="https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c89696c200001fc9240_gallery-image-06-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c89696c200001fc9240_gallery-image-06.jpg 800w"
             alt="" />
           <script type="application/json" class="w-json">{
@@ -860,8 +770,7 @@
 }</script>
         </a><a href="#" data-ix="show-zoom-icon" class="gallery-image w-inline-block w-lightbox">
           <div class="zoom-icon"></div><img
-            src="../assets.website-files.com/59e98418f9cd070001c89d5a/59f71c8aeac5ea0001c1bf58_gallery-image-07.jpg"
-            sizes="(max-width: 767px) 49vw, 19vw"
+            src="{{asset('website/59e98418f9cd070001c89d5a/59f71c8aeac5ea0001c1bf58_gallery-image-07.jpg')}}           sizes="(max-width: 767px) 49vw, 19vw"
             srcset="https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c8aeac5ea0001c1bf58_gallery-image-07-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c8aeac5ea0001c1bf58_gallery-image-07.jpg 800w"
             alt="" />
           <script type="application/json" class="w-json">{
@@ -882,8 +791,7 @@
 }</script>
         </a><a href="#" data-ix="show-zoom-icon" class="gallery-image w-inline-block w-lightbox">
           <div class="zoom-icon"></div><img
-            src="../assets.website-files.com/59e98418f9cd070001c89d5a/59f71c8b696c200001fc9242_gallery-image-08.jpg"
-            sizes="(max-width: 767px) 49vw, 19vw"
+            src="{{asset('website/59e98418f9cd070001c89d5a/59f71c8b696c200001fc9242_gallery-image-08.jpg')}}           sizes="(max-width: 767px) 49vw, 19vw"
             srcset="https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c8b696c200001fc9242_gallery-image-08-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71c8b696c200001fc9242_gallery-image-08.jpg 800w"
             alt="" />
           <script type="application/json" class="w-json">{
@@ -903,8 +811,7 @@
 }</script>
         </a><a href="#" data-ix="show-zoom-icon" class="gallery-image w-inline-block w-lightbox">
           <div class="zoom-icon"></div><img
-            src="../assets.website-files.com/59e98418f9cd070001c89d5a/59f71ca7eac5ea0001c1bf64_gallery-image-09.jpg"
-            sizes="(max-width: 767px) 49vw, 19vw"
+            src="{{asset('website/59e98418f9cd070001c89d5a/59f71ca7eac5ea0001c1bf64_gallery-image-09.jpg')}}           sizes="(max-width: 767px) 49vw, 19vw"
             srcset="https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71ca7eac5ea0001c1bf64_gallery-image-09-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71ca7eac5ea0001c1bf64_gallery-image-09.jpg 800w"
             alt="" />
           <script type="application/json" class="w-json">{
@@ -925,8 +832,7 @@
 }</script>
         </a><a href="#" data-ix="show-zoom-icon" class="gallery-image w-inline-block w-lightbox">
           <div class="zoom-icon"></div><img
-            src="../assets.website-files.com/59e98418f9cd070001c89d5a/59f71ca914023c0001d82798_gallery-image-10.jpg"
-            sizes="(max-width: 767px) 49vw, 19vw"
+            src="{{asset('website/59e98418f9cd070001c89d5a/59f71ca914023c0001d82798_gallery-image-10.jpg')}}           sizes="(max-width: 767px) 49vw, 19vw"
             srcset="https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71ca914023c0001d82798_gallery-image-10-p-500.jpeg 500w, https://assets.website-files.com/59e98418f9cd070001c89d5a/59f71ca914023c0001d82798_gallery-image-10.jpg 800w"
             alt="" />
           <script type="application/json" class="w-json">{
@@ -952,8 +858,7 @@
           <div data-ix="fade-right" data-w-id="a19ece4a-6bc6-a27a-a20c-1249a940a46f" style="opacity:1"
             class="contact-card">
             <div class="contact-card-info"><img
-                src="../assets.website-files.com/59e98418f9cd070001c89d5a/59f5b840defbd900010137b9_location-icon.png"
-                alt="" class="big-icon" />
+                src="{{asset('website/59e98418f9cd070001c89d5a/59f5b840defbd900010137b9_location-icon.png')}}            alt="" class="big-icon" />
               <h3>Easy to Find</h3>
               <div class="divider"></div>
               <p class="grey-text">Delicious Cafe, 1649 Norman Street, Los Angeles, 90011</p><a href="#"
@@ -1071,28 +976,22 @@
             <div class="footer-instagram-photos"><a href="https://www.instagram.com/" target="_blank"
                 class="instagram-photo w-inline-block">
                 <div data-ix="hide-on-load" class="zoom-icon small"></div><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d5a/5a901e8051487600011555f1_instagram-01.jpg"
-                  alt="" class="full-width" />
+                  src="{{asset('website/59e98418f9cd070001c89d5a/5a901e8051487600011555f1_instagram-01.jpg')}}"             alt="" class="full-width" />
               </a><a href="https://www.instagram.com/" target="_blank" class="instagram-photo w-inline-block">
                 <div data-ix="hide-on-load" class="zoom-icon small"></div><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d5a/5a901e8019e7db0001fdbd2f_instagram-02.jpg"
-                  alt="" class="full-width" />
+                  src="{{asset('website/59e98418f9cd070001c89d5a/5a901e8019e7db0001fdbd2f_instagram-02.jpg')}}"             alt="" class="full-width" />
               </a><a href="https://www.instagram.com/" target="_blank" class="instagram-photo w-inline-block">
                 <div data-ix="hide-on-load" class="zoom-icon small"></div><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d5a/5a901e8019e7db0001fdbd2e_instagram-03.jpg"
-                  alt="" class="full-width" />
+                  src="{{asset('website/59e98418f9cd070001c89d5a/5a901e8019e7db0001fdbd2e_instagram-03.jpg')}}"             alt="" class="full-width" />
               </a><a href="https://www.instagram.com/" target="_blank" class="instagram-photo w-inline-block">
                 <div data-ix="hide-on-load" class="zoom-icon small"></div><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d5a/5a901e80b223b60001243d80_instagram-04.jpg"
-                  alt="" class="full-width" />
+                  src="{{asset('website/59e98418f9cd070001c89d5a/5a901e80b223b60001243d80_instagram-04.jpg')}}"             alt="" class="full-width" />
               </a><a href="https://www.instagram.com/" target="_blank" class="instagram-photo w-inline-block">
                 <div data-ix="hide-on-load" class="zoom-icon small"></div><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d5a/5a901e8051487600011555f0_instagram-05.jpg"
-                  alt="" class="full-width" />
+                  src="{{asset('website/59e98418f9cd070001c89d5a/5a901e8051487600011555f0_instagram-05.jpg')}}"             alt="" class="full-width" />
               </a><a href="https://www.instagram.com/" target="_blank" class="instagram-photo w-inline-block">
                 <div data-ix="hide-on-load" class="zoom-icon small"></div><img
-                  src="../assets.website-files.com/59e98418f9cd070001c89d5a/5a901e80ec586e0001d6626b_instagram-06.jpg"
-                  alt="" class="full-width" />
+                  src="{{asset('website/59e98418f9cd070001c89d5a/5a901e80ec586e0001d6626b_instagram-06.jpg')}}"             alt="" class="full-width" />
               </a></div><a href="http://instagram.com/" target="_blank" class="footer-link blog-link">View More
               Photos</a>
           </div>
@@ -1117,10 +1016,10 @@
       <div class="footer-bottom-base"></div>
     </footer>
   </div>
-  <script src="../d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c896f7.js?site=59e98418f9cd070001c89d5a"
+  <script src="{{asset('website/d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c896f7.js')}}?site=59e98418f9cd070001c89d5a"
     type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous"></script>
-  <script src="../assets.website-files.com/59e98418f9cd070001c89d5a/js/webflow.c925500fe.js"
+  <script src="{{asset('website/59e98418f9cd070001c89d5a/js/webflow.c925500fe.js')}}"
     type="text/javascript"></script>
 </body>
 

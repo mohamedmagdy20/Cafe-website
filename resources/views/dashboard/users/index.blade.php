@@ -2,19 +2,42 @@
 
 @section('content')
 
+<div class="page-header">
+  <h3 class="page-title"> @lang('lang.users')</h3>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{route('dashboard')}}">@lang('lang.dashboard')</a></li>
+      <li class="breadcrumb-item active"><a href="{{route('dashboard.users.index')}}">@lang('lang.users')</a></li>
+   
+    </ol>
+  </nav>
+  
+</div>
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Users</h4>
+        <div class="row justify-content-between align-items-center">
+          <div class="col-md-6">
+            <h4 class="card-title">@lang('lang.show') @lang('lang.users')</h4>
+          </div>
+      <div class="col-md-6">
+        <a href="{{route('dashboard.users.create')}}" class="btn btn-success">@lang('lang.create') @lang('lang.users') <i class="fa fa-plus" style="font-size: 15px;"></i></a>
+      </div>
+           </div>
+
+        
         <div class="table-responsive">
             <table class="table table-striped" id="user-table">
                 <thead>
                   <tr>
-                    <th> Image </th>
-                    <th> Name </th>
-                    <th> Email </th>
-                    <th> Status </th>
-                    <th> Actions </th>
+                    <th> @lang('lang.image') </th>
+                    <th> @lang('lang.name') </th>
+                    <th> @lang('lang.email') </th>
+                    <th>@lang('lang.role')</th>
+                    <th> @lang('lang.status') </th>
+
+                    <th> @lang('lang.created_by') </th>
+                    <th> @lang('lang.actions') </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -67,7 +90,14 @@ function setUserDatatable() {
                 data: 'email'
             },
             {
+                data: 'roles'
+            },
+            
+            {
                 data: 'status'
+            },
+            {
+              data:'created_by'
             },
             {
                 data: 'actions'
@@ -95,14 +125,18 @@ function deleteConfirmation(id) {
 
                 $.ajax({
                     type: 'GET',
-                    url: "{{url('users/delete')}}/" + id,
+                    url: "{{url('dashboard/users/delete')}}/" + id,
                     data: {_token: CSRF_TOKEN},
                     dataType: 'JSON',
                     success: function (results) {
 
-                            swal("Done!", results.message, "success");
-                            UsersTable.ajax.reload()
-                
+                           
+                            if(results.status == true)
+                            {
+                                swal("Done!", results.message, "success");
+                                UsersTable.ajax.reload()
+                           
+                              }
                     },
                 });
 
@@ -114,6 +148,7 @@ function deleteConfirmation(id) {
             return false;
         })
     }
+
 
 </script>
 

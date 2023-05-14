@@ -8,16 +8,16 @@
         <span class="mdi mdi-menu"></span>
       </button>
       <div class="search-field d-none d-xl-block">
-        <form class="d-flex align-items-center h-100" action="#">
+        {{-- <form class="d-flex align-items-center h-100" action="#">
           <div class="input-group">
             <div class="input-group-prepend bg-transparent">
               <i class="input-group-text border-0 mdi mdi-magnify"></i>
             </div>
             <input type="text" class="form-control bg-transparent border-0" placeholder="Search products">
           </div>
-        </form>
+        </form> --}}
       </div>
-      <ul class="navbar-nav navbar-nav-right">
+      {{-- <ul class="navbar-nav navbar-nav-right">
         <li class="nav-item  dropdown d-none d-md-block">
           <a class="nav-link dropdown-toggle" id="reportDropdown" href="#" data-toggle="dropdown" aria-expanded="false"> Reports </a>
           <div class="dropdown-menu navbar-dropdown" aria-labelledby="reportDropdown">
@@ -204,9 +204,9 @@
             <h6 class="p-3 mb-0 text-center">See all notifications</h6>
           </div>
         </li>
-      </ul>
-      <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+      </ul> --}}
+      {{-- <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
         <span class="mdi mdi-menu"></span>
-      </button>
+      </button> --}}
     </div>
   </nav>
