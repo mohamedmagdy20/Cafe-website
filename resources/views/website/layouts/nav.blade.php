@@ -49,21 +49,30 @@ role="banner" class="nav-bar fixed-nav-bar w-nav">
   </a><a href="#Scroll-Section" class="hero-scroll w-inline-block"><img
       src="https://assets.website-files.com/59e98418f9cd070001c89d5a/59f830332817100001d1ba91_arrow-down-icon.svg"
       alt="" /></a>
-  <div class="social-icons hero-icons"><a href="https://twitter.com/" target="_blank"
+  <div class="social-icons hero-icons">
+    
+    <a href="https://twitter.com/" target="_blank"
       class="social-link hero-link w-inline-block"><img
         src="https://assets.website-files.com/59e98418f9cd070001c89d5a/59e98418f9cd070001c89db7_twitter-icon-white.svg"
-        alt="" /></a><a href="https://facebook.com/" target="_blank"
+        alt="" /></a>
+
+    <a href="https://facebook.com/" target="_blank"
       class="social-link hero-link w-inline-block"><img
         src="https://assets.website-files.com/59e98418f9cd070001c89d5a/59e98418f9cd070001c89dae_facebook-icon-white.svg"
-        alt="" /></a><a href="https://instagram.com/" target="_blank"
+        alt="" /></a>
+
+    <a href="https://instagram.com/" target="_blank"
       class="social-link hero-link w-inline-block"><img
         src="https://assets.website-files.com/59e98418f9cd070001c89d5a/59e98418f9cd070001c89daf_instagram-icon-white.svg"
-        alt="" /></a></div>
+        alt="" /></a>
+
+  </div>
 </div>
 <div data-delay="6000" data-animation="cross" class="hero-slider w-slider" data-autoplay="true" data-easing="ease"
   data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3"
   data-duration="2000" data-infinite="true">
   <div class="w-slider-mask">
+    
     <div class="slide-1 w-slide">
       <div class="wrapper slide-wrapper w-container">
         <div class="slide-content">
@@ -77,6 +86,7 @@ role="banner" class="nav-bar fixed-nav-bar w-nav">
         </div>
       </div>
     </div>
+
     <div class="slide-2 w-slide">
       <div class="wrapper slide-wrapper w-container">
         <div class="slide-content">
@@ -89,6 +99,8 @@ role="banner" class="nav-bar fixed-nav-bar w-nav">
         </div>
       </div>
     </div>
+
+
     <div class="slide-3 w-slide">
       <div class="wrapper slide-wrapper w-container">
         <div class="slide-content">
@@ -101,10 +113,13 @@ role="banner" class="nav-bar fixed-nav-bar w-nav">
         </div>
       </div>
     </div>
+
   </div>
+  
   <div class="slider-arrow arrow-left w-hidden-small w-hidden-tiny w-slider-arrow-left"><img
       src="https://assets.website-files.com/59e98418f9cd070001c89d5a/59e98418f9cd070001c89dad_arrow-scroll-left-icon.svg"
       alt="" /></div>
+
   <div class="slider-arrow arrow-right w-slider-arrow-right"><img
       src="https://assets.website-files.com/59e98418f9cd070001c89d5a/59e98418f9cd070001c89dac_arrow-scroll-right-icon.svg"
       alt="" /></div>

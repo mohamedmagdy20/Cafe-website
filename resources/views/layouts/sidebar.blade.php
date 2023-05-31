@@ -35,11 +35,36 @@
     </li>
 
     <li class="nav-item">
+      <a class="nav-link" href="{{route('dashboard.banners.index')}}">
+        <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
+        <span class="menu-title">Banners</span>
+      </a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link" href="{{route('dashboard.abouts.index')}}">
+        <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
+        <span class="menu-title">Abouts</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
       <a class="nav-link" href="{{route('dashboard.menu.index')}}">
         <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
         <span class="menu-title">Menu</span>
       </a>
     </li>
+
+    
+    <li class="nav-item">
+      <a class="nav-link" href="{{route('dashboard.settings.index')}}">
+        <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
+        <span class="menu-title">Settings</span>
+      </a>
+    </li>
+
+    <br>
     
 
     <li class="nav-item sidebar-user-actions">

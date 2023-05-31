@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\Dashboard\AboutController;
+use App\Http\Controllers\Dashboard\BannerController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\HeaderController;
 use App\Http\Controllers\Dashboard\HomeController;
 use App\Http\Controllers\Dashboard\MenuController;
+use App\Http\Controllers\Dashboard\SettingController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Route;
@@ -79,6 +82,35 @@ Route::group(['middleware' => 'auth','prefix'=>'admin'],function(){
         Route::post('store','store')->name($route.'store');
         Route::post('update/{id}','update')->name($route.'update');
     });
+
+
+    
+    Route::group(['prefix' => 'abouts','controller'=>AboutController::class], function (){
+        $route = 'dashboard.abouts.';  
+        Route::get('/','index')->name($route.'index');
+        Route::post('update','update')->name($route.'update');
+    });
+
+
+    
+    Route::group(['prefix' => 'settings','controller'=>SettingController::class], function (){
+        $route = 'dashboard.settings.';  
+        Route::get('/','index')->name($route.'index');
+        Route::post('update','update')->name($route.'update');
+    });
+
+    Route::group(['prefix' => 'banners','controller'=>BannerController::class], function (){
+        $route = 'dashboard.banners.';
+        
+        Route::get('/','index')->name($route.'index');
+        Route::get('create','create')->name($route.'create');
+        Route::get('edit/{id}','edit')->name($route.'edit');
+        Route::get('delete/{id}','delete')->name($route.'delete');
+        Route::post('store','store')->name($route.'store');
+        Route::post('update/{id}','update')->name($route.'update');
+    });
+
+
 
 });
 
