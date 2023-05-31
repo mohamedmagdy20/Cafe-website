@@ -2,5 +2,7 @@
 
 return [
     'USERS_PATH'=>'uploads/users',
-    'MENU_PATH'=>'uploads/menus'
+    'MENU_PATH'=>'uploads/menus',
+    'HEADER_PATH'=>'uploads/headers'
+
 ];

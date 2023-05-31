@@ -13,7 +13,6 @@ class Category extends Model
         'name'
     ];
 
-
     public function menu()
     {
         return $this->hasMany(Menu::class,'category_id');

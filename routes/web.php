@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\CategoryController;
+use App\Http\Controllers\Dashboard\HeaderController;
 use App\Http\Controllers\Dashboard\HomeController;
 use App\Http\Controllers\Dashboard\MenuController;
 use App\Http\Controllers\Dashboard\UserController;
@@ -61,11 +62,22 @@ Route::group(['middleware' => 'auth','prefix'=>'admin'],function(){
         Route::get('data',[MenuController::class,'data'])->name($route.'data');
         Route::get('create',[MenuController::class,'create'])->name($route.'create');
         Route::get('edit/{id}',[MenuController::class,'edit'])->name($route.'edit');
-    
         Route::get('delete/{id}',[MenuController::class,'delete'])->name($route.'delete');
         Route::post('store',[MenuController::class,'store'])->name($route.'store');
         Route::post('update/{id}',[MenuController::class,'update'])->name($route.'update');
     
+    });
+
+    
+    Route::group(['prefix' => 'headers','controller'=>HeaderController::class], function (){
+        $route = 'dashboard.headers.';
+        
+        Route::get('/','index')->name($route.'index');
+        Route::get('create','create')->name($route.'create');
+        Route::get('edit/{id}','edit')->name($route.'edit');
+        Route::get('delete/{id}','delete')->name($route.'delete');
+        Route::post('store','store')->name($route.'store');
+        Route::post('update/{id}','update')->name($route.'update');
     });
 
 });
