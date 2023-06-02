@@ -30,7 +30,9 @@
             <table class="table table-striped" id="user-table">
                 <thead>
                   <tr>
-                    <th> name</th>
+                    <th> title</th>
+                    <th> body</th>
+
                     <th> image</th>
                     <th> actions </th>
                   </tr>
@@ -39,6 +41,8 @@
                     @foreach ($data as $d)
                     <tr>
                         <td>{{$d->title}}</td>
+                        <td>{{$d->body}}</td>
+
                         <td>
                             <div class="py-1">
                                 <img src="{{$d->image ? asset('uploads/headers/'.$d->image) : asset('assets/images/faces-clipart/pic-1.png')}} " alt=""></td>

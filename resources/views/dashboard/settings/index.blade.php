@@ -73,7 +73,44 @@
                             @enderror
                         </div>
                     </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="exampleInputName1">Address</label>
+                            <input type="text" class="form-control" name="address" id="exampleInputName1" value="{{old('address',$data[5]->value)}}" placeholder="Enter Instegram">
+                            @error('address')
+                            <span class="text-danger"> {{ $message }} </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="exampleInputName1">Email</label>
+                            <input type="email" class="form-control" name="email" id="exampleInputName1" value="{{old('email',$data[6]->value)}}" placeholder="Enter Instegram">
+                            @error('email')
+                            <span class="text-danger"> {{ $message }} </span>
+                            @enderror
+                        </div>
+                    </div>
                     
+
+                    <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                            <label>Logo</label>
+                            <input type="file" name="logo" id="choose-file" class="form-control">
+                            @error('logo')
+                            <span class="text-danger"> {{ $message }} </span>
+                            @enderror                           
+                          </div>
+
+                          <div id="img-preview"></div>
+                          <div class="py-1">
+                            {{-- <img src="{{asset('uplsett')}}" alt=""> --}}
+
+                          </div>
+                
+                    </div>
+             
               <button type="submit" class="btn btn-primary mr-2">Save</button>
               <a href="{{route('dashboard')}}" class="btn btn-light">cencel</a>
             </form>

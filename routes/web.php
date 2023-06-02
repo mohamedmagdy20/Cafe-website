@@ -22,13 +22,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[WebsiteController::class,'index'])->name('home');
+Route::get('/',[WebsiteController::class,'menu'])->name('menu');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard',[HomeController::class,'index'])->middleware(['auth'])->name('dashboard');
 
-Route::get('menu',[WebsiteController::class,'menu'])->name('menu');
+Route::get('home',[WebsiteController::class,'index'])->name('home');
 Route::group(['middleware' => 'auth','prefix'=>'admin'],function(){
 
     Route::group(['prefix' => 'users'], function (){

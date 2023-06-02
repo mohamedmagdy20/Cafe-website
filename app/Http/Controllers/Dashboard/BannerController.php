@@ -52,11 +52,14 @@ class BannerController extends GeneralController
         if($request->file('image'))
         {
             $image= $this->updateImage($request->image,$header->image,config('path.BANNER_PATH'));
-            // $request->merge(['image'=>$image]);
             $header->update(array_merge($request->all(),['image'=>$image]));
             return redirect()->route('dashboard.banners.index')->with('success','Updated');            
-        
+         
         }
+        $header->update($request->all());
+        return redirect()->route('dashboard.banners.index')->with('success','Updated');            
+         
+      
     }
 
     public function delete($id)

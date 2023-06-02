@@ -10,7 +10,7 @@ class Header extends Model
     protected $table = 'headers';
 
     protected $fillable = [
-        'title','image'
+        'title','body','image'
     ];
 
     use HasFactory;

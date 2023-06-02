@@ -29,6 +29,17 @@
                         </div>
                     </div>
 
+                    
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="exampleInputName1">body</label>
+                          <input type="text" class="form-control" name="body" id="exampleInputName1" value="{{old('body',$data->body)}}" placeholder="Enter body">
+                          @error('body')
+                          <span class="text-danger"> {{ $message }} </span>
+                          @enderror
+                      </div>
+                  </div>
+
                     <div class="col-md-12 mb-3">
                         <div class="form-group">
                             <label>Image</label>

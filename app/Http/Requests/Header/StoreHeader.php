@@ -26,6 +26,7 @@ class StoreHeader extends FormRequest
         return [
             //
             'title'=>'required',
+            'body'=>'required',
             'image'=>'image'
         ];
     }

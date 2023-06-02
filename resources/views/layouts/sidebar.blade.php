@@ -71,8 +71,8 @@
       <div class="sidebar-user-menu">
         <form action="{{route('logout')}}" method="POST">
           @csrf
-          <button  class="nav-link border-0"><i class="mdi mdi-logout menu-icon"></i>
-            <span class="menu-title text-danger">Logout</span></button>
+          <button  class="nav-link border-0 btn btn-success p-2"><i class="mdi mdi-logout menu-icon text-white"></i>
+            <span class="menu-title text-white">Logout</span></button>
         </form>
         </div>
     </li>
